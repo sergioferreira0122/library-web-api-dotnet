@@ -1,0 +1,65 @@
+name: dockercompose4766360516660457190
+services:
+  app_db:
+    container_name: app-db
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: G0*`_Uo415[b
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      library.api: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "8002"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\dados\volumes\sqlserver
+        target: /var/opt/mssql/data
+        bind:
+          create_host_path: true
+  jenkins:
+    container_name: jenkins
+    image: jenkins/jenkins:lts
+    networks:
+      library.api: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "8080"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\dados\volumes\jenkins
+        target: /var/jenkins_home
+        bind:
+          create_host_path: true
+  library.api:
+    build:
+      context: C:\Users\Sergio\source\repos\Library
+      dockerfile: Library/Dockerfile
+    container_name: web-api-library
+    depends_on:
+      app_db:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      DB_HOST: app_db
+      DB_NAME: libraryapi
+      DB_SA_PASSWORD: G0*`_Uo415[b
+    image: libraryapi
+    networks:
+      library.api: null
+    ports:
+      - mode: ingress
+        target: 80
+        protocol: tcp
+      - mode: ingress
+        target: 80
+        published: "8001"
+        protocol: tcp
+networks:
+  library.api:
+    name: dockercompose4766360516660457190_library.api

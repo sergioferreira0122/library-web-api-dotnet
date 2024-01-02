@@ -1,0 +1,24 @@
+name: dockercompose4766360516660457190
+services:
+  app_db:
+    container_name: app-db
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: G0*`_Uo415[b
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "1433"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\dados\volumes\sqlserver
+        target: /var/opt/mssql/data
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose4766360516660457190_default

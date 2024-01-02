@@ -1,0 +1,22 @@
+name: dockercompose4766360516660457190
+services:
+  library.api:
+    build:
+      context: C:\Users\Sergio\source\repos\Library
+      dockerfile: Library/Dockerfile
+    container_name: web-api-library
+    environment:
+      DB_HOST: APP_DB
+      DB_NAME: libraryapi
+      DB_SA_PASSWORD: G0*`_Uo415[b
+    image: libraryapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "8001"
+        protocol: tcp
+networks:
+  default:
+    name: dockercompose4766360516660457190_default
