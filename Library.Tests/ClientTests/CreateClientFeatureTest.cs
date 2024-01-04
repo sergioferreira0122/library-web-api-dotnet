@@ -7,7 +7,7 @@ using Library.Domain.Abstractions;
 using Library.Domain.Entities;
 using Moq;
 
-namespace Library.Tests
+namespace Library.Tests.ClientTests
 {
     public class CreateClientFeatureTest
     {
@@ -30,11 +30,11 @@ namespace Library.Tests
             //Arrange
             var command = new CreateClientCommand { Address = "Rua Nova, 16", Name = "Antonio", PhoneNumber = "939403048" };
 
-           _clientRepositoryMock.Setup(
-                x => x.AddClientAsync(
-                    It.IsAny<Client>(),
-                    It.IsAny<CancellationToken>()))
-                .Returns(Task.CompletedTask);
+            _clientRepositoryMock.Setup(
+                 x => x.AddClientAsync(
+                     It.IsAny<Client>(),
+                     It.IsAny<CancellationToken>()))
+                 .Returns(Task.CompletedTask);
 
             var handler = new CreateClientCommandHandler(
                 _validator,
@@ -43,7 +43,7 @@ namespace Library.Tests
                 _mapper);
 
             //Act
-            Result result = await handler.Handle(command, default);
+            var result = await handler.Handle(command, default);
 
             //Assert
             result.IsSuccess.Should().Be(true);
@@ -53,7 +53,7 @@ namespace Library.Tests
         public async Task HandleShouldReturnFailureWhenPhoneNumberHasLetters()
         {
             //Arrange
-            var command = new CreateClientCommand { Address = "Rua Nova, 16", Name = "Antonio", PhoneNumber = "93940da4144"};
+            var command = new CreateClientCommand { Address = "Rua Nova, 16", Name = "Antonio", PhoneNumber = "93940da4144" };
 
             var handler = new CreateClientCommandHandler(
                 _validator,
@@ -62,7 +62,7 @@ namespace Library.Tests
                 _mapper);
 
             //Act
-            Result result = await handler.Handle(command, default);
+            var result = await handler.Handle(command, default);
 
             //Assert
             result.Error.Should().Be(ClientErrors.PhoneNumberContainLetters);
