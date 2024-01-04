@@ -21,7 +21,7 @@ namespace Library.Tests.BookTests
         }
 
         [Fact]
-        public async Task HandlerShouldReturnSuccess()
+        public async Task HandlehouldReturnSuccess()
         {
             //Arrange 
             var command = new CreateBookCommand
