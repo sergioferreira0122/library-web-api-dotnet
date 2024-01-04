@@ -67,5 +67,31 @@ namespace Library.Tests
             //Assert
             result.Error.Should().Be(ClientErrors.PhoneNumberContainLetters);
         }
+
+        [Fact]
+        public void MapShouldReturnSuccess()
+        {
+            //Arrange
+            var createClientCommand = new CreateClientCommand
+            {
+                Address = "Rua atualizada",
+                Name = "Manuel",
+                PhoneNumber = "939414412",
+            };
+
+            var expectedClient = new Client
+            {
+                Address = "Rua atualizada",
+                Name = "Manuel",
+                PhoneNumber = "939414412",
+
+            };
+
+            //Act
+            var clientMapped = _mapper.Map(createClientCommand, new Client());
+
+            //Assert
+            clientMapped.Should().BeEquivalentTo(expectedClient);
+        }
     }
 }
