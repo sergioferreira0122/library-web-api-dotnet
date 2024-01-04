@@ -12,7 +12,7 @@ using Library.Application.Features.Bookings.Commands;
 namespace Library.Presentation.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")] //TODO: FALTA ADICIONAR UM USE CASE (GET ALL BOOKINGS FROM A CLIENT)
+    [Route("api/[controller]")]
     public class BookingsController : ControllerBase
     {
         private readonly ISender _sender;
