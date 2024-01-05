@@ -1,6 +1,6 @@
 ﻿namespace Library.Application.Features.Bookings
 {
-    public class BookingErrors
+    public static class BookingErrors
     {
         public static readonly Error BookingNotFound = new(
             "Bookings.NotFound",

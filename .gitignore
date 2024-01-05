@@ -21,3 +21,4 @@ Library.Presentation/bin/
 
 Library.Tests/obj/
 Library.Tests/bin/
+/.sonarqube

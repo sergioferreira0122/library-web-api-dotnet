@@ -88,7 +88,7 @@ namespace Library.Presentation.Controllers
             if (resultError.Equals(ClientErrors.ClientNotFound)) return StatusCode(404, result);
             if (resultError.Equals(ClientErrors.PhoneNumberContainLetters)) return StatusCode(400, result);
 
-            throw new Exception($"Unexpected error: {resultError}");
+            throw new ArgumentException($"Unexpected error: {resultError}");
         }
     }
 }

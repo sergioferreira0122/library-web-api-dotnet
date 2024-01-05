@@ -1,6 +1,6 @@
 ﻿namespace Library.Application.Features.Clients
 {
-    public class ClientErrors
+    public static class ClientErrors
     {
         public static readonly Error ClientNotFound = new(
             "Clients.NotFound",

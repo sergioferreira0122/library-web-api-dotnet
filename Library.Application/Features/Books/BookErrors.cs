@@ -1,6 +1,6 @@
 ﻿namespace Library.Application.Features.Books
 {
-    public class BookErrors
+    public static class BookErrors
     {
         public static readonly Error BookNotFound = new(
             "Books.NotFound",

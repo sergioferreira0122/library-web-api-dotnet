@@ -87,7 +87,7 @@ namespace Library.Presentation.Controllers
 
             if (resultError.Equals(BookErrors.BookNotFound)) return StatusCode(404, result);
 
-            throw new Exception($"Unexpected error: {resultError}");
+            throw new ArgumentException($"Unexpected error: {resultError}");
         }
     }
 }
