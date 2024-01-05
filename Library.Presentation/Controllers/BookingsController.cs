@@ -105,7 +105,7 @@ namespace Library.Presentation.Controllers
         {
             var resultError = result.Error;
 
-            if (resultError.Equals(BookingErrors.BookingNotFound)) return StatusCode(404, result);
+            if (resultError.Equals(BookingErrors.BookingNotFound)) return StatusCode(404, resultError);
 
             throw new ArgumentException($"Unexpected error: {resultError}");
         }
