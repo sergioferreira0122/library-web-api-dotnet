@@ -201,11 +201,6 @@ namespace Library.Tests.BookingTests
 
             List<Booking> list = new List<Booking> { bookingFromRepository1, bookingFromRepository2 };
 
-            _bookingRepository.Setup(
-                x => x.GetBookingsAsync(
-                    It.IsAny<CancellationToken>()))
-                .ReturnsAsync(list);
-
             //Act
             var clientListMaped = _mapper.Map(list, new List<GetAllBookingsResponse>());
 
