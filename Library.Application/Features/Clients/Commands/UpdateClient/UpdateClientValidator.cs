@@ -5,16 +5,16 @@ namespace Library.Application.Features.Clients.Commands
 {
     public class UpdateClientValidator : IValidator<UpdateClientCommand>
     {
-        public async Task<Result> IsValidAsync(
+        public Task<Result> IsValidAsync(
             UpdateClientCommand tCommand,
             CancellationToken cancellationToken)
         {
             if (tCommand.PhoneNumber.Any(char.IsLetter))
             {
-                return ClientErrors.PhoneNumberContainLetters;
+                return Task.FromResult<Result>(ClientErrors.PhoneNumberContainLetters);
             }
 
-            return Result.Success();
+            return Task.FromResult(Result.Success());
         }
     }
 }

@@ -73,7 +73,7 @@ namespace Library.Tests.BookTests
         }
 
         [Fact]
-        public async void MapShouldReturnSuccess()
+        public void MapShouldReturnSuccess()
         {
             //Arrange
             var dateTimeNow = DateTime.Now.Date;

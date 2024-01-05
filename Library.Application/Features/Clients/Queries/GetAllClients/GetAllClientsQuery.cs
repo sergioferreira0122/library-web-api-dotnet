@@ -2,5 +2,5 @@
 
 namespace Library.Application.Features.Clients.Queries
 {
-    public record GetAllClientsQuery : IQuery<ICollection<GetAllClientsResponse>> { }
+    public record GetAllClientsQuery() : IQuery<ICollection<GetAllClientsResponse>> { }
 }

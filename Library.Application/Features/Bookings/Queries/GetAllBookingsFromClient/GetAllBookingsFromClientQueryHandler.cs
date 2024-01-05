@@ -5,7 +5,7 @@ using Library.Domain.Entities;
 namespace Library.Application.Features.Bookings.Queries
 {
     public class GetAllBookingsFromClientQueryHandler
-        : IQueryHandler<GetAllBookingsFromClientQuery, ICollection<GetAllBookingsFromClientResponse>>
+        : IQueryHandler<GetAllBookingsFromClientQuery, ICollection<GetAllBookingsFromClientResponse>?>
     {
         private readonly IBookingRepository _bookingRepository;
         private readonly IClientRepository _clientRepository;
@@ -28,7 +28,7 @@ namespace Library.Application.Features.Bookings.Queries
             var client = await _clientRepository.GetByIdAsync(request.clientId, cancellationToken);
             if (client == null)
                 return null;
-
+            
             var bookings = await _bookingRepository.GetBookingsFromClientIdAsync(request.clientId, cancellationToken);
 
             return _mapper.Map(bookings, new List<GetAllBookingsFromClientResponse>());
