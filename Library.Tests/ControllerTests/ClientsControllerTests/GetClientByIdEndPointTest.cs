@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using Library.Application;
 using Library.Application.Features.Clients;
 using Library.Application.Features.Clients.Queries;
 using Library.Presentation.Controllers;
@@ -26,7 +25,7 @@ namespace Library.Tests.ControllerTests.ClientsControllerTests
             //Arrange
             int clientId = 1;
 
-            var request = new GetClientByIdQuery { Id = 1};
+            var request = new GetClientByIdQuery { Id = clientId};
 
             var clientResponse = new GetClientByIdResponse
             {
@@ -47,6 +46,7 @@ namespace Library.Tests.ControllerTests.ClientsControllerTests
 
             //Assert
             result!.StatusCode.Should().Be(200);
+            result!.Value.Should().Be(clientResponse);
         }
 
         [Fact]

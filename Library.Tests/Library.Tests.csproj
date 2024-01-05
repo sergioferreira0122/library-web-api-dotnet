@@ -25,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ControllerTests\BooksControllerTests\" />
     <Folder Include="ControllerTests\BookingsControllerTests\" />
   </ItemGroup>
 
