@@ -7,7 +7,7 @@ using Library.Domain.Abstractions;
 using Library.Domain.Entities;
 using Moq;
 
-namespace Library.Tests.BookingTests
+namespace Library.Tests.FeatureTests.BookingTests
 {
     public class UpdateBookingFeatureTest
     {

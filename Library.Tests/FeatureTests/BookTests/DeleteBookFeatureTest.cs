@@ -5,7 +5,7 @@ using Library.Domain.Abstractions;
 using Library.Domain.Entities;
 using Moq;
 
-namespace Library.Tests.BookTests
+namespace Library.Tests.FeatureTests.BookTests
 {
     public class DeleteBookFeatureTest
     {

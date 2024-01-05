@@ -6,7 +6,7 @@ using Library.Domain.Abstractions;
 using Library.Domain.Entities;
 using Moq;
 
-namespace Library.Tests.ClientTests
+namespace Library.Tests.FeatureTests.ClientTests
 {
     public class GetClientByIdFeatureTest
     {
@@ -23,11 +23,11 @@ namespace Library.Tests.ClientTests
         public async Task HandleShouldReturnClient()
         {
             //Arrange
-            var query = new GetClientByIdQuery { Id = 1};
+            var query = new GetClientByIdQuery { Id = 1 };
 
             var handler = new GetClientByIdQueryHandler(_clientRepository.Object, _mapper);
 
-            var expected = new GetClientByIdResponse 
+            var expected = new GetClientByIdResponse
             {
                 Id = 1,
                 Address = "Rua nova",

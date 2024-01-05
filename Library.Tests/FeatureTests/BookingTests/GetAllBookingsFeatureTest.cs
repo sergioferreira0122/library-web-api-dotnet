@@ -8,7 +8,7 @@ using Library.Domain.Entities;
 using Library.Infrastructure.Repositories;
 using Moq;
 
-namespace Library.Tests.BookingTests
+namespace Library.Tests.FeatureTests.BookingTests
 {
     public class GetAllBookingsFeatureTest
     {
@@ -133,7 +133,7 @@ namespace Library.Tests.BookingTests
         public void MapShouldReturnSuccess()
         {
             //Arrange
-            var dateTimeNow = DateTime.Now.Date;      
+            var dateTimeNow = DateTime.Now.Date;
 
             var book1 = new Book
             {

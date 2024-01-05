@@ -7,7 +7,7 @@ using Library.Domain.Abstractions;
 using Library.Domain.Entities;
 using Moq;
 
-namespace Library.Tests.BookTests
+namespace Library.Tests.FeatureTests.BookTests
 {
     public class GetAllBooksFeatureTest
     {
@@ -27,7 +27,7 @@ namespace Library.Tests.BookTests
             var dateTimeNow = DateTime.Now.Date;
             var query = new GetAllBooksQuery();
 
-            var client1 = new Book 
+            var client1 = new Book
             {
                 Id = 1,
                 Author = "Author 1",
@@ -43,7 +43,7 @@ namespace Library.Tests.BookTests
                 Title = "Title 2",
             };
 
-            List<Book> list = new List<Book> { client1, client2};
+            List<Book> list = new List<Book> { client1, client2 };
 
             _bookRepository.Setup(
                 x => x.GetBooksAsync(

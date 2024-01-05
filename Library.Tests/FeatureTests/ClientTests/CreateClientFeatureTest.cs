@@ -7,7 +7,7 @@ using Library.Domain.Abstractions;
 using Library.Domain.Entities;
 using Moq;
 
-namespace Library.Tests.ClientTests
+namespace Library.Tests.FeatureTests.ClientTests
 {
     public class CreateClientFeatureTest
     {

@@ -5,7 +5,7 @@ using Library.Domain.Abstractions;
 using Library.Domain.Entities;
 using Moq;
 
-namespace Library.Tests.BookingTests
+namespace Library.Tests.FeatureTests.BookingTests
 {
     public class GetAllBookingsFromClientFeatureTest
     {
@@ -73,7 +73,7 @@ namespace Library.Tests.BookingTests
                 IssueDate = dateTimeNow,
             };
 
-            List<Booking> list = new List<Booking> { bookingFromRepository1, bookingFromRepository2 };  
+            List<Booking> list = new List<Booking> { bookingFromRepository1, bookingFromRepository2 };
 
             _bookingRepository.Setup(
                 x => x.GetBookingsFromClientIdAsync(
@@ -215,7 +215,7 @@ namespace Library.Tests.BookingTests
             };
 
             List<Booking> list = new List<Booking> { bookingFromRepository1, bookingFromRepository2 };
-            
+
             //Act
             var clientListMaped = _mapper.Map(list, new List<GetAllBookingsFromClientResponse>());
 

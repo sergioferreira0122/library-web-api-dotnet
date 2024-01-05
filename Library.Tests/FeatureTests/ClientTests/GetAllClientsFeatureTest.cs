@@ -5,7 +5,7 @@ using Library.Domain.Abstractions;
 using Library.Domain.Entities;
 using Moq;
 
-namespace Library.Tests.ClientTests
+namespace Library.Tests.FeatureTests.ClientTests
 {
     public class GetAllClientsFeatureTest
     {
@@ -42,7 +42,7 @@ namespace Library.Tests.ClientTests
                 PhoneNumber = "9234567890",
             };
 
-            List<Client> listFromRepository = new List<Client> { client1, client2};
+            List<Client> listFromRepository = new List<Client> { client1, client2 };
 
             _clientRepository.Setup(
                 x => x.GetClientsAsync(
@@ -112,7 +112,7 @@ namespace Library.Tests.ClientTests
                 PhoneNumber = "939414412",
             };
 
-            List<Client> list = new List<Client> { client1 , client2};
+            List<Client> list = new List<Client> { client1, client2 };
 
             //Act
             var clientListMaped = _mapper.Map(list, new List<GetAllClientsResponse>());

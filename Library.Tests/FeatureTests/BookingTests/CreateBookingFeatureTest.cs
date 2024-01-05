@@ -6,7 +6,7 @@ using Library.Domain.Abstractions;
 using Library.Domain.Entities;
 using Moq;
 
-namespace Library.Tests.BookingTests
+namespace Library.Tests.FeatureTests.BookingTests
 {
     public class CreateBookingFeatureTest
     {
@@ -33,7 +33,7 @@ namespace Library.Tests.BookingTests
             {
                 BookId = 1,
                 ClientId = 1,
-                IssuedDate = DateOnly.FromDateTime(dateTimeNow) 
+                IssuedDate = DateOnly.FromDateTime(dateTimeNow)
             };
 
             var bookFromRepository = new Book { Author = "autor", Id = 1, PublishDate = dateTimeNow, Title = "titulo" };

@@ -5,7 +5,7 @@ using Library.Domain.Abstractions;
 using Library.Domain.Entities;
 using Moq;
 
-namespace Library.Tests.BookTests
+namespace Library.Tests.FeatureTests.BookTests
 {
     public class CreateBookFeatureTest
     {
@@ -56,7 +56,7 @@ namespace Library.Tests.BookTests
             {
                 Author = "Manuel",
                 PublishDate = DateOnly.FromDateTime(dateTimeNow),
-                Title = "Titulo" 
+                Title = "Titulo"
             };
 
             var expectedBook = new Book

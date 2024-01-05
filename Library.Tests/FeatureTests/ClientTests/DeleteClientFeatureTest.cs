@@ -5,7 +5,7 @@ using Library.Domain.Abstractions;
 using Library.Domain.Entities;
 using Moq;
 
-namespace Library.Tests.ClientTests
+namespace Library.Tests.FeatureTests.ClientTests
 {
     public class DeleteClientFeatureTest
     {
@@ -39,7 +39,7 @@ namespace Library.Tests.ClientTests
             //Arrange
             var command = new DeleteClientCommand(1);
 
-            var client = new Client { Id = 1 , Address = "Rua antiga", Name = "Ulysses", PhoneNumber = "9399393939"};
+            var client = new Client { Id = 1, Address = "Rua antiga", Name = "Ulysses", PhoneNumber = "9399393939" };
 
             _clientRepositoryMock.Setup(
                 x => x.GetByIdAsync(
@@ -51,7 +51,7 @@ namespace Library.Tests.ClientTests
                 x => x.DeleteClientAsync(
                     It.IsAny<Client>()))
                 .Returns(Task.CompletedTask);
-            
+
             var handler = new DeleteClientCommandHandler(_clientRepositoryMock.Object, _unitOfWorkMock.Object);
 
             //Act

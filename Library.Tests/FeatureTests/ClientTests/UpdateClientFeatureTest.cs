@@ -6,7 +6,7 @@ using Library.Domain.Abstractions;
 using Library.Domain.Entities;
 using Moq;
 
-namespace Library.Tests.ClientTests
+namespace Library.Tests.FeatureTests.ClientTests
 {
     public class UpdateClientFeatureTest
     {
@@ -27,7 +27,7 @@ namespace Library.Tests.ClientTests
         public async Task HandleShouldReturnSuccess()
         {
             //Arrange
-            var command = new UpdateClientCommand { Address = "Address", Id = 1, Name = "Name", PhoneNumber = "9394930491"};
+            var command = new UpdateClientCommand { Address = "Address", Id = 1, Name = "Name", PhoneNumber = "9394930491" };
 
             var handler = new UpdateClientCommandHandler(_validator, _clientRepository.Object, _unitOfWork.Object, _mapper);
 

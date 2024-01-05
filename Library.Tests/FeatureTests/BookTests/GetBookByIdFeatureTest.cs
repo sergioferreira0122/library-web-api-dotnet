@@ -6,7 +6,7 @@ using Library.Domain.Abstractions;
 using Library.Domain.Entities;
 using Moq;
 
-namespace Library.Tests.BookTests
+namespace Library.Tests.FeatureTests.BookTests
 {
     public class GetBookByIdFeatureTest
     {
@@ -24,7 +24,7 @@ namespace Library.Tests.BookTests
         {
             //Arrange
             var dateTimeNow = DateTime.Now.Date;
-            var query = new GetBookByIdQuery { Id = 1};
+            var query = new GetBookByIdQuery { Id = 1 };
 
             var bookFromRepository = new Book
             {
@@ -61,7 +61,7 @@ namespace Library.Tests.BookTests
         public async Task HandleShouldReturnFailureBookNotFound()
         {
             //Arrange
-            var query = new GetBookByIdQuery { Id = 1};
+            var query = new GetBookByIdQuery { Id = 1 };
 
             var handler = new GetBookByIdQueryHandler(_bookRepository.Object, _mapper);
 
@@ -78,7 +78,7 @@ namespace Library.Tests.BookTests
             //Arrange
             var dateTimeNow = DateTime.Now.Date;
 
-            var book = new Book 
+            var book = new Book
             {
                 Id = 1,
                 Title = "Title",
