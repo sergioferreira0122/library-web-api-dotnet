@@ -23,8 +23,6 @@ namespace Library.Tests.ControllerTests.ClientsControllerTests
         public async Task GetAllClientsEndPointShouldReturn200WhenListIsNotEmpty()
         {
             //Arrange
-            var query = new GetAllClientsQuery();
-
             var client1 = new GetAllClientsResponse
             {
                 Id = 2,
@@ -61,8 +59,6 @@ namespace Library.Tests.ControllerTests.ClientsControllerTests
         public async Task GetAllClientsEndPointShouldReturn204WhenListIsEmpty()
         {
             //Arrange
-            var query = new GetAllClientsQuery();
-
             var list = new List<GetAllClientsResponse>();
 
             _sender.Setup(

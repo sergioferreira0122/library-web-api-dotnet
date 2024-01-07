@@ -25,8 +25,6 @@ namespace Library.Tests.ControllerTests.BooksControllerTests
             //Arrange
             var bookId = 1;
 
-            var query = new GetBookByIdQuery { Id = bookId };
-
             var bookResponse = new GetBookByIdResponse
             {
                 Author = "Autor",

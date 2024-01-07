@@ -8,6 +8,7 @@ using Library.Application.Features.Books.Queries;
 using Library.Application.Features.Bookings;
 using Library.Application.Features.Bookings.Queries;
 using Library.Application.Features.Bookings.Commands;
+using Library.Application.Features.Books;
 
 namespace Library.Presentation.Controllers
 {
@@ -27,7 +28,7 @@ namespace Library.Presentation.Controllers
             int bookingId,
             CancellationToken cancellationToken)
         {
-            var response = await _sender.Send(new GetBookByIdQuery() { Id = bookingId }, cancellationToken);
+            var response = await _sender.Send(new GetBookByIdQuery { Id = bookingId }, cancellationToken);
 
             if (response == null) return StatusCode(404, BookingErrors.BookingNotFound);
 
@@ -106,6 +107,8 @@ namespace Library.Presentation.Controllers
             var resultError = result.Error;
 
             if (resultError.Equals(BookingErrors.BookingNotFound)) return StatusCode(404, resultError);
+            if (resultError.Equals(BookErrors.BookNotFound)) return StatusCode(404, resultError);
+            if (resultError.Equals(ClientErrors.ClientNotFound)) return StatusCode(404, resultError);
 
             throw new ArgumentException($"Unexpected error: {resultError}");
         }

@@ -25,8 +25,6 @@ namespace Library.Tests.ControllerTests.ClientsControllerTests
             //Arrange
             int clientId = 1;
 
-            var request = new GetClientByIdQuery { Id = clientId};
-
             var clientResponse = new GetClientByIdResponse
             {
                 Address = "Address",

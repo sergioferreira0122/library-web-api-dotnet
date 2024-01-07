@@ -24,8 +24,4 @@
     <ProjectReference Include="..\Library\Library.API.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ControllerTests\BookingsControllerTests\" />
-  </ItemGroup>
-
 </Project>

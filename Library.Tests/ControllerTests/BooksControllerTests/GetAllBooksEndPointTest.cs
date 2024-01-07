@@ -25,8 +25,6 @@ namespace Library.Tests.ControllerTests.BooksControllerTests
             //Arrange
             var dateTimeNow = DateOnly.FromDateTime(DateTime.Now.Date);
 
-            var query = new GetAllBooksQuery();
-
             var book1 = new GetAllBooksResponse
             {
                 Id = 1,
@@ -63,8 +61,6 @@ namespace Library.Tests.ControllerTests.BooksControllerTests
         public async Task GetAllBooksEndPointShouldReturn204WhenListIsEmpty()
         {
             //Arrange
-            var query = new GetAllClientsQuery();
-
             var list = new List<GetAllBooksResponse>();
 
             _sender.Setup(
