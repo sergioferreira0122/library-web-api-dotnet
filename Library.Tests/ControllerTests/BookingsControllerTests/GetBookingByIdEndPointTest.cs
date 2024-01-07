@@ -1,8 +1,7 @@
 ﻿using FluentAssertions;
+using Library.Application.Features.Bookings;
 using Library.Application.Features.Bookings.Queries;
-using Library.Application.Features.Books.Queries;
 using Library.Presentation.Controllers;
-using Library.Tests.FeatureTests.BookingTests;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -23,7 +22,6 @@ namespace Library.Tests.ControllerTests.BookingsControllerTests
         [Fact]
         public async Task GetBookingByIdShouldReturn200WhenBookingIsFound()
         {
-            /*
             //Arrange
             var bookingId = 1;
 
@@ -32,7 +30,7 @@ namespace Library.Tests.ControllerTests.BookingsControllerTests
                 BookTitle = "Title",
                 ClientName = "client",
                 Id = 1,
-                IssuedDate = DateOnly.FromDateTime(DateTime.Now.Date),
+                IssuedDate = DateOnly.FromDateTime(DateTime.Now.Date)
             };
 
             _sender.Setup(
@@ -47,7 +45,20 @@ namespace Library.Tests.ControllerTests.BookingsControllerTests
             //Assert
             result!.StatusCode.Should().Be(200);
             result!.Value.Should().Be(bookingResponse);
-             */
+        }
+
+        [Fact]
+        public async Task GetBookingByIdShouldReturn404WhenBookingIsNotFound()
+        {
+            //Arrange
+            var bookingId = 1;
+
+            //Act
+            var result = await _controller.GetBookingById(bookingId, default) as ObjectResult;
+
+            //Assert
+            result!.StatusCode.Should().Be(404);
+            result!.Value.Should().Be(BookingErrors.BookingNotFound);
         }
     }
 }

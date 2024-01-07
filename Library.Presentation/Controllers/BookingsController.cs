@@ -28,7 +28,7 @@ namespace Library.Presentation.Controllers
             int bookingId,
             CancellationToken cancellationToken)
         {
-            var response = await _sender.Send(new GetBookByIdQuery { Id = bookingId }, cancellationToken);
+            var response = await _sender.Send(new GetBookingByIdQuery(bookingId), cancellationToken);
 
             if (response == null) return StatusCode(404, BookingErrors.BookingNotFound);
 
