@@ -2,5 +2,5 @@
 
 namespace Library.Application.Features.Books.Commands
 {
-    public record DeleteBookCommand(int Id) : ICommand {}
+    public record DeleteBookCommand(int Id) : ICommand { }
 }

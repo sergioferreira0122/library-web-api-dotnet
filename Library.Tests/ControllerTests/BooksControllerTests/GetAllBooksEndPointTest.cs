@@ -1,6 +1,5 @@
 ﻿using FluentAssertions;
 using Library.Application.Features.Books.Queries;
-using Library.Application.Features.Clients.Queries;
 using Library.Presentation.Controllers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -41,7 +40,7 @@ namespace Library.Tests.ControllerTests.BooksControllerTests
                 Title = "Titulo"
             };
 
-            List<GetAllBooksResponse> list = new List<GetAllBooksResponse> { book1, book2};
+            List<GetAllBooksResponse> list = new List<GetAllBooksResponse> { book1, book2 };
 
             _sender.Setup(
                 x => x.Send(

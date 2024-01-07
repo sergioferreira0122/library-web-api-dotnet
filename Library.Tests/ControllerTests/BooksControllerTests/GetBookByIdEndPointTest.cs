@@ -1,7 +1,6 @@
 ﻿using FluentAssertions;
 using Library.Application.Features.Books;
 using Library.Application.Features.Books.Queries;
-using Library.Application.Features.Clients;
 using Library.Presentation.Controllers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +12,7 @@ namespace Library.Tests.ControllerTests.BooksControllerTests
     {
         private readonly Mock<ISender> _sender;
         private readonly BooksController _controller;
+
         public GetBookByIdEndPointTest()
         {
             _sender = new Mock<ISender>();

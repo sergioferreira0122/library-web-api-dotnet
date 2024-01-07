@@ -2,5 +2,5 @@
 
 namespace Library.Application.Features.Bookings.Queries
 {
-    public record GetAllBookingsQuery() : IQuery<ICollection<GetAllBookingsResponse>> {}
+    public record GetAllBookingsQuery() : IQuery<ICollection<GetAllBookingsResponse>> { }
 }

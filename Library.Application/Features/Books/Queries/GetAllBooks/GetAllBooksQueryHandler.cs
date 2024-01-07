@@ -12,7 +12,7 @@ namespace Library.Application.Features.Queries
 
         public GetAllBooksQueryHandler(
             IBookRepository bookRepository,
-            IMapper<ICollection<Book>,ICollection<GetAllBooksResponse>> mapper)
+            IMapper<ICollection<Book>, ICollection<GetAllBooksResponse>> mapper)
         {
             _bookRepository = bookRepository;
             _mapper = mapper;

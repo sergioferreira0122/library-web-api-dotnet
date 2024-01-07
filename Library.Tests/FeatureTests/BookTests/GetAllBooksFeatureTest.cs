@@ -1,7 +1,6 @@
 ﻿using FluentAssertions;
 using Library.Application.Abstractions;
 using Library.Application.Features.Books.Queries;
-using Library.Application.Features.Clients.Queries;
 using Library.Application.Features.Queries;
 using Library.Domain.Abstractions;
 using Library.Domain.Entities;

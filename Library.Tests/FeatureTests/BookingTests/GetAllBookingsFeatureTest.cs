@@ -1,11 +1,8 @@
 ﻿using FluentAssertions;
 using Library.Application.Abstractions;
 using Library.Application.Features.Bookings.Queries;
-using Library.Application.Features.Books.Queries;
-using Library.Application.Features.Queries;
 using Library.Domain.Abstractions;
 using Library.Domain.Entities;
-using Library.Infrastructure.Repositories;
 using Moq;
 
 namespace Library.Tests.FeatureTests.BookingTests

@@ -28,7 +28,7 @@ namespace Library.Application.Features.Bookings.Queries
             var client = await _clientRepository.GetByIdAsync(request.clientId, cancellationToken);
             if (client == null)
                 return null;
-            
+
             var bookings = await _bookingRepository.GetBookingsFromClientIdAsync(request.clientId, cancellationToken);
 
             return _mapper.Map(bookings, new List<GetAllBookingsFromClientResponse>());

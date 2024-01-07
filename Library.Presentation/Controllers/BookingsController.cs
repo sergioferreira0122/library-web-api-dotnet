@@ -1,14 +1,11 @@
-﻿using Library.Application.Features.Clients.Commands;
-using Library.Application.Features.Clients.Queries;
+﻿using Library.Application;
+using Library.Application.Features.Bookings;
+using Library.Application.Features.Bookings.Commands;
+using Library.Application.Features.Bookings.Queries;
+using Library.Application.Features.Books;
 using Library.Application.Features.Clients;
-using Library.Application;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Library.Application.Features.Books.Queries;
-using Library.Application.Features.Bookings;
-using Library.Application.Features.Bookings.Queries;
-using Library.Application.Features.Bookings.Commands;
-using Library.Application.Features.Books;
 
 namespace Library.Presentation.Controllers
 {

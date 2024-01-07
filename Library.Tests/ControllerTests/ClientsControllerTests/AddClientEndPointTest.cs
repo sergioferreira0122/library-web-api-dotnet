@@ -24,7 +24,7 @@ namespace Library.Tests.ControllerTests.ClientsControllerTests
         public async Task AddClientEndPointShouldReturn201WhenCreated()
         {
             //Arrange
-            var command = new CreateClientCommand 
+            var command = new CreateClientCommand
             {
                 Address = "Address",
                 Name = "Name",

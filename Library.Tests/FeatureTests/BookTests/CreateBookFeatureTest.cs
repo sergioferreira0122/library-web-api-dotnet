@@ -23,7 +23,7 @@ namespace Library.Tests.FeatureTests.BookTests
         [Fact]
         public async Task HandlehouldReturnSuccess()
         {
-            //Arrange 
+            //Arrange
             var command = new CreateBookCommand
             {
                 Author = "Shakes",

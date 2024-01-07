@@ -28,12 +28,12 @@ namespace Library.Tests.ControllerTests.BooksControllerTests
 
             var bookId = 1;
 
-            var command = new UpdateBookCommand 
+            var command = new UpdateBookCommand
             {
                 Author = "Autor",
                 Id = 1,
-                PublishDate = DateOnly.FromDateTime(dateTimeNow), 
-                Title = "Title" 
+                PublishDate = DateOnly.FromDateTime(dateTimeNow),
+                Title = "Title"
             };
 
             _sender.Setup(

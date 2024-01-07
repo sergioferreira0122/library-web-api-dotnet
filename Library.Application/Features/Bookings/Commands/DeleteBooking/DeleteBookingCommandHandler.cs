@@ -23,7 +23,7 @@ namespace Library.Application.Features.Bookings.Commands
             var booking = await _bookingRepository.GetByIdAsync(request.Id, cancellationToken);
             if (booking == null)
                 return BookingErrors.BookingNotFound;
-            
+
             await _bookingRepository.DeleteBookingAsync(booking);
 
             await _unitOfWork.Commit(cancellationToken);

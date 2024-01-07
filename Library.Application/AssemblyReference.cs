@@ -1,6 +1,5 @@
 ﻿using System.Reflection;
 
-
 namespace Library.Application
 {
     public static class AssemblyReference

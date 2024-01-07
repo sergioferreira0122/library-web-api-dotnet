@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using Library.Application;
 using Library.Application.Abstractions;
 using Library.Application.Features.Clients;
 using Library.Application.Features.Clients.Commands;
@@ -84,7 +83,6 @@ namespace Library.Tests.FeatureTests.ClientTests
                 Address = "Rua atualizada",
                 Name = "Manuel",
                 PhoneNumber = "939414412",
-
             };
 
             //Act

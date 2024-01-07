@@ -1,5 +1,4 @@
-﻿
-namespace Library.Application.Abstractions
+﻿namespace Library.Application.Abstractions
 {
     public interface IValidator<TCommand>
         where TCommand : ICommand

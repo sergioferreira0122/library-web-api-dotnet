@@ -1,7 +1,5 @@
 ﻿using FluentAssertions;
 using Library.Application.Features.Bookings.Queries;
-using Library.Application.Features.Books.Queries;
-using Library.Domain.Entities;
 using Library.Presentation.Controllers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -26,12 +24,12 @@ namespace Library.Tests.ControllerTests.BookingsControllerTests
             //Arrange
             var dateTimeNow = DateTime.Now.Date;
 
-            var bookingResponse1 = new GetAllBookingsResponse 
+            var bookingResponse1 = new GetAllBookingsResponse
             {
                 BookTitle = "Titulo",
                 ClientName = "Client",
                 Id = 1,
-                IssuedDate = DateOnly.FromDateTime(DateTime.Now.Date) 
+                IssuedDate = DateOnly.FromDateTime(DateTime.Now.Date)
             };
 
             var bookingResponse2 = new GetAllBookingsResponse

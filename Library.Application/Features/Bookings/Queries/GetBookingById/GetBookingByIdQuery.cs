@@ -2,5 +2,5 @@
 
 namespace Library.Application.Features.Bookings.Queries
 {
-    public record GetBookingByIdQuery(int Id) : IQuery<GetBookingByIdResponse?> {}
+    public record GetBookingByIdQuery(int Id) : IQuery<GetBookingByIdResponse?> { }
 }

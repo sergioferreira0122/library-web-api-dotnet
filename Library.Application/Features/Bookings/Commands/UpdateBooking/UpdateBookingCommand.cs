@@ -6,15 +6,15 @@ namespace Library.Application.Features.Bookings.Commands
     public class UpdateBookingCommand : ICommand
     {
         [Required]
-        public required int BookingId { get; set; }
+        public int BookingId { get; set; }
 
         [Required]
-        public required int ClientId { get; set; }
+        public int ClientId { get; set; }
 
         [Required]
-        public required int BookId { get; set; }
+        public int BookId { get; set; }
 
         [Required]
-        public required DateOnly IssuedDate { get; set; }
+        public DateOnly IssuedDate { get; set; }
     }
 }

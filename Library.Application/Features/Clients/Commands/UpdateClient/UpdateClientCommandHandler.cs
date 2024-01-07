@@ -1,5 +1,4 @@
 ﻿using Library.Application.Abstractions;
-using Library.Application.Features.Clients;
 using Library.Domain.Abstractions;
 using Library.Domain.Entities;
 

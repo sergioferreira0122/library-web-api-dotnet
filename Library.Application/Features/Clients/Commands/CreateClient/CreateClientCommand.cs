@@ -1,17 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Library.Application.Abstractions;
+﻿using Library.Application.Abstractions;
+using System.ComponentModel.DataAnnotations;
 
 namespace Library.Application.Features.Clients.Commands
 {
     public class CreateClientCommand : ICommand
     {
         [Required]
-        public required string Name { get; set; }
+        public string Name { get; set; }
 
         [Required]
-        public required string Address { get; set; }
+        public string Address { get; set; }
 
         [Required]
-        public required string PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace Library.Application.Features.Bookings.Queries
 
         private static GetAllBookingsResponse IndividualMapping(Booking data)
         {
-            var readModel = new GetAllBookingsResponse 
+            var readModel = new GetAllBookingsResponse
             {
                 Id = data.Id,
                 BookTitle = data.Book!.Title,

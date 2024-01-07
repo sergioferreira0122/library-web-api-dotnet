@@ -2,5 +2,5 @@
 
 namespace Library.Application.Features.Books.Queries
 {
-    public record GetAllBooksQuery() : IQuery<ICollection<GetAllBooksResponse>> {}
+    public record GetAllBooksQuery() : IQuery<ICollection<GetAllBooksResponse>> { }
 }

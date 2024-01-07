@@ -1,6 +1,5 @@
 ﻿using FluentAssertions;
 using Library.Application.Features.Clients.Queries;
-using Library.Domain.Entities;
 using Library.Presentation.Controllers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

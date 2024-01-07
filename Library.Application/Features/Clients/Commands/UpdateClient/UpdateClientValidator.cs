@@ -1,5 +1,4 @@
 ﻿using Library.Application.Abstractions;
-using Library.Application.Features.Clients;
 
 namespace Library.Application.Features.Clients.Commands
 {
